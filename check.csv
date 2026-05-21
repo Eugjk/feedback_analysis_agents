@@ -1,0 +1,29 @@
+,list of ids,ticket info,recommended owner,ticket_id
+0,"['F014', 'F035']","Session timeout during form submission causing data loss : Users are experiencing forced logouts while actively filling out forms, resulting in the total loss of entered progress. This is currently tracked specifically in support ticket F014.",backend,0
+1,"['F001', 'F021', 'F036']","OTP Delivery Failure During Login : Users are unable to access their accounts because the OTP code is not being delivered during the login authentication flow, causing the screen to hang indefinitely.",authentication,1
+2,"['F008', 'F023', 'F042', 'F031']","Document Upload Failure and Status Sync Issues : Users are encountering persistent failures during the document upload process and observing incorrect status reflections (e.g., 'pending') after successful attempts, alongside a lack of clear error messaging for failed uploads.",backend,2
+3,"['F002', 'F005', 'F022', 'F025', 'F038', 'F018']","Payment confirmation latency and sync failure : Users are experiencing a synchronization failure between the payment gateway and the application state. Despite bank charges being processed, the app UI continues to display 'failed' or 'unpaid' status, and booking/appointment confirmations are failing to reflect in the user's dashboard.",backend,3
+4,"['F017', 'F034', 'F039', 'F049']","Inaccurate geolocation filtering in search results : Users are consistently receiving irrelevant search results for service centers, as the app displays locations far outside of their specified area or postal code, failing to prioritize proximity.",backend,4
+5,"['F011', 'F030']","Incorrect Service Centre Geolocation Data : Users are reporting that the in-app map service displays incorrect locations for service centres, leading to navigation errors and users arriving at the wrong buildings.",backend,5
+6,"['F015', 'F029']","Reward voucher redemption failure and synchronization error : Users are experiencing issues where reward vouchers disappear or are incorrectly marked as 'already redeemed' immediately upon clicking the redeem button, preventing them from successfully claiming their rewards.",backend,6
+7,"['F010', 'F032']","Duplicate billing charges during subscription renewal : Users are experiencing duplicate charges for a single subscription renewal cycle, resulting in multiple billing events for one billing period.",payments,7
+8,"['F009', 'F028']","Notification preferences failing to persist : Users are unable to successfully update and save their notification settings. Specifically, when users attempt to disable marketing alerts, the preference does not save or persists only visually, resulting in users continuing to receive unwanted promotional notifications.",backend,8
+9,['F003'],App crash on profile page access,frontend,9
+10,['F004'],Password reset link expiration issue,authentication,10
+11,['F006'],Chatbot providing irrelevant responses regarding refund status,customer_support,11
+12,['F007'],App performance degradation when loading account history,frontend,12
+13,['F012'],Face verification failure: User reports repeated failure of facial recognition despite functioning hardware.,authentication,13
+14,['F013'],UI Interaction issue: Save button is greyed out/disabled when attempting to update phone number profile settings.,frontend,14
+15,['F016'],Dashboard service availability error: Persistent 'service unavailable' error message upon accessing the main dashboard.,backend,15
+16,['F019'],Email verification loop: System repeatedly prompts users for email verification despite successful completion.,authentication,16
+17,['F020'],Live chat state persistence: Application fails to maintain session state for the live chat queue when switching app focus.,frontend,17
+18,['F024'],App crash in messages tab: Persistent application crash when accessing the messages functionality.,frontend,18
+19,['F026'],Refund status delay: User reports lack of progress or updates on refund request despite time elapsed.,customer_support,19
+20,['F027'],User unable to edit submitted service category request and seeking guidance on cancellation/resubmission process.,customer_support,20
+21,['F033'],Chatbot is failing to provide relevant assistance for booking changes and defaulting to unrelated FAQs.,product,21
+22,['F041'],Chatbot efficiency issues for complex queries requiring human support escalation.,customer_support,22
+23,['F044'],User feedback regarding confusing rewards section UI and unclear redemption rules. This is a UX/UI documentation issue separate from technical voucher synchronization failures.,product,23
+24,['F045'],User feedback requesting better progress tracking visibility for submitted requests within the application UI.,product,24
+25,['F046'],Application crash occurring specifically during profile editing. This is a stability/crash report distinct from existing tickets.,frontend,25
+26,['F047'],UI/UX feedback regarding unclear label terminology throughout the application interface.,product,26
+27,['F050'],Request for automatic draft saving feature for long forms to prevent data loss or progress reset.,frontend,27

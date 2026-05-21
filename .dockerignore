@@ -1,0 +1,13 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+.git/
+
+outputs/
+processed_feedback.csv
+check.csv
+final_tickets.csv

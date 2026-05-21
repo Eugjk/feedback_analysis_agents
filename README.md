@@ -6,11 +6,18 @@ The pipeline reads feedback from an Excel workbook, standardizes it into a singl
 
 ## The motivation for this project
 
-Customer feedback often arrives through several channels: support tickets, long-form emails, and surveys. The same product issue can appear in many different forms, while unrelated issues can share similar words. Moreover, for large-scale apps, there will be a large number of tickets/emails etc. being processed, which makes manual review tedious. This project explores an agentic workflow that aims to solve this set of problems.
+Customer feedback often arrives through several channels: support tickets, long-form emails, and surveys. The same product issue can appear in many different forms, while unrelated issues can share similar words. Moreover, for large-scale apps/services, there will be a large number of tickets/emails etc. being processed, which makes manual review tedious. This project explores an agentic workflow that aims to solve this set of problems.
 
-The main design structure is to keep both API usage and ticket volume low. A naive one-agent approach could send every feedback item, or every pair of feedback items, through an LLM for classification and deduplication. That becomes expensive quickly and still tends to produce overlapping tickets. This project instead uses cheap local TF-IDF clustering first, then spends LLM calls only on smaller cluster summaries, ambiguous records, and final ticket merging. The target outcome is fewer model calls per feedback item and fewer duplicate tickets for reviewers to triage.
+In Singapore’s context, public agencies often deploy services that affect a very large group of people, making large-scale feedback across multiple channels expected. However, processing these issues can take time due to structural constraints such as limited manpower, especially when officers need to manually review support tickets, emails, surveys, and other feedback sources. As a result, users may feel inconvenienced when they have to wait for responses to their support tickets or help emails. By implementing this workflow, agencies can potentially improve the public’s perception of service efficiency by enabling faster triaging, consolidation, and routing of issues. At the same time, the workflow can help mitigate manpower constraints to some extent by reducing repetitive manual review and allowing officers to focus on higher-value tasks such as validating complex cases and resolving priority issues.
 
-The intended user is a product, support operations, or engineering triage team that wants a first-pass grouping of customer pain points translated into tickets before human review.
+Due to the large scale of users that these services are provided for, I decided to focus on both the scale and speed of the workflow, which will inform the design structure of this project, which is detailed below.
+
+## Design structure
+The main design structure is to keep both API usage (i.e. number of LLM calls) and ticket volume low. A low LLM call count speeds up the workflow, and a low ticket volume allows for more manageable downstream review by people, as well as more efficient communication between teams.
+
+In terms of agent organisation, a naive one-agent approach could send every feedback item, or every pair of feedback items, through an LLM for classification and deduplication. That becomes expensive quickly and still tends to produce overlapping tickets. This project instead uses cheap local TF-IDF clustering first, then spends LLM calls only on smaller cluster summaries, ambiguous records, and final ticket merging. The target outcome is fewer model calls per feedback item and fewer duplicate tickets for reviewers to triage.
+
+The intended user is a product, support operations, or engineering triage team that wants a grouping of customer/citizen pain points translated into tickets before human review.
 
 ## Data Story
 
@@ -136,7 +143,8 @@ Notes:
 - The pipeline depends on model outputs being valid JSON. There is some parsing fallback, but production use would need stricter validation, retries, and schema checks.
 
 - The project has a basic Dockerfile, but does not yet have CI or a formal test suite.
-- By nature of grouping, certain ticket descriptions are more elaborate/broad
+
+- By nature of grouping, certain ticket descriptions are more elaborate/broad. The workflow also currently does not take into account business/organisational definitions of appropriate tickets, as this varies froom place to place. Additional definitions can be incorporated into the agent prompts as a potential solution.
 
 ## Further Improvements
 
@@ -153,6 +161,6 @@ Other improvements worth trying:
 
 ## Deployment Considerations
 
-In production, this would likely run as a scheduled internal batch job owned by product operations, customer support operations, or an analytics engineering team. A small container or workflow runner is enough for the local compute: TF-IDF and KMeans over thousands of short feedback records should fit comfortably on one CPU with modest memory. The main cost is inference. The current design makes one Gemini call per cluster summary, one call per reconsideration batch, and one call per ticket-merge batch, with optional embedding calls if enabled. At 1,000 feedback records, that is usually tens to low hundreds of model calls depending on batch sizes and cluster count. Moreover, there are many parameters that are intentionally defined (e.g. clusters, batch sizes for each agent) so that the number of API calls can be explicitly controlled.
+In production, this would likely run as a scheduled internal batch job owned by product operations, customer support operations, or an analytics engineering team. A small container or workflow runner is enough for the local compute: TF-IDF and KMeans over thousands of short feedback records should fit comfortably on one CPU with modest memory. The main cost is inference. The current design makes one Gemini call per cluster summary, one call per reconsideration batch, and one call per ticket-merge batch, with optional embedding calls if enabled. At 1,000 feedback records, that is usually tens to low hundreds of model calls depending on batch sizes and cluster count. However, there are many parameters that are intentionally defined (e.g. clusters, batch sizes for each agent) so that the number of API calls can be explicitly controlled.
 
-Once live, I would monitor JSON parse failure rate, model latency, API spend, cluster size distribution, duplicate ticket rate, human override rate, owner assignment accuracy, and drift in common issue themes. The specific risk that would keep me up at night is silent over-merging: unrelated customer pain points could be collapsed into one plausible-sounding ticket, causing a real production issue to be hidden instead of escalated.
+Once live, I would monitor JSON parse failure rate, model latency, API spend, cluster size distribution, duplicate ticket rate, human override rate, owner assignment accuracy, and drift in common issue themes. The specific risk that would keep me up at night is silent over-merging: unrelated customer/citizen pain points could be collapsed into one plausible-sounding ticket, causing a real production issue to be hidden instead of escalated, or support staff having to deal with contradicting information, which may take more time than reading the feedback manually in the first place.

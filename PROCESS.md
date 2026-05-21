@@ -42,7 +42,7 @@ Another judgment call was to combine classical NLP with LLM reasoning. TF-IDF/KM
 
 I also chose to keep `feedback_id` values in every stage. This matters because a human reviewer should be able to audit why a ticket exists and which records support it.
 
-## Evaluation
+## Evaluation/Results
 
 The evaluation is done with 2 stages: Testing of the TF-IDF + clustering process and of the agentic workflow itself. For the TF-IDF + clustering, we use the number of reconsider_ids produced by the summarizer agent as a metric, while we use ticket quality checking for the agentic workflow as a metric.
 

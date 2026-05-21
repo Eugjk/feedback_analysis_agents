@@ -18,8 +18,9 @@ def run_feedback_workflow():
 
     Output files:
         outputs/clustered_feedback.csv: the feedback of each customer alongside their assigned clusters
-        final_tickets.csv: the final output of the agentic workflow, comprising of tickets tagged with the relevant customers ids, 
-        along with the department/owner that the ticket is being sent to
+        outputs/final_tickets.csv: the final output of the agentic workflow,
+        comprising tickets tagged with the relevant customer ids and the
+        department/owner that the ticket is being sent to
     """
     print("[run_feedback_agent] Starting feedback analysis workflow")
 
@@ -93,7 +94,7 @@ def run_feedback_workflow():
     for i in range(len(ticket_info_list)):
         ticket_info_list[i]={"ticket id": i, "description":ticket_info_list[i]}
 
-    batch_size=4
+    batch_size=7
     all_assignments=[]
     for i in range(0,len(reconsider_df),batch_size):
         batch_df= reconsider_df.iloc[i:i + batch_size]
@@ -165,10 +166,11 @@ def run_feedback_workflow():
     ]
 
     final_tickets_df=pd.concat([final_df,non_merged_df],ignore_index=True)
-    final_tickets_df.to_csv("final_tickets.csv")
+    final_tickets_df.to_csv("outputs/final_tickets.csv", index=False)
+    print("[run_feedback_agent] Saved outputs/final_tickets.csv")
 
 
-    # Note that final_tickets.csv contains the final tickets to be sent to the relevant departments, and will be used for evaluation
+    # Note that outputs/final_tickets.csv contains the final tickets to be sent to the relevant departments, and will be used for evaluation
     # Since human evaulation/manual inspection is being used here, and evaluation is the final step of the workflow, additional code is not necessary
     # More details on the evaluation and reasoning (e.g. human eval vs llm-as-a-judge etc) is found in the PROCESS.md file
     

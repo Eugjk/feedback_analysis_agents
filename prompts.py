@@ -151,6 +151,7 @@ Rules:
 - Use semantic meaning, not just keyword overlap.
 - The final output must be valid JSON only.
 - If there are no similar tickets, put an empty list
+- For the merged ticket description, you can be more descriptive as long as the description accurately describes each ticket in the group
 - recommended_owner: "frontend | backend | authentication | payments | notifications | customer_support | product",
 Return strictly valid JSON in this structure:
 {{

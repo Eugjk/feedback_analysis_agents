@@ -11,16 +11,15 @@ from sklearn.metrics.pairwise import cosine_similarity
 from google import genai
 from google.genai import types
 import numpy as np
-# from openai import OpenAI
 from prompts import  VALIDATOR_PROMPT,SUMMARY_PROMPT,MERGER_PROMPT
 print("imports done")
 load_dotenv()
 
 excel_filepath="../feedback_analysis_agents/synthetic_online_app_feedback_datasets.xlsx"
 MODEL_NAME = "gemini-3.1-flash-lite"
-# MODEL_NAME = "gpt-4.1-mini"
+
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
-# client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
 
 CLUSTER_SIZE_THRESHOLD = 20
 RANDOM_STATE = 42
@@ -78,8 +77,9 @@ def load_feedback_data(
         ["feedback_id", "cust_id", "source", "feedback", "ease_of_use_score"]
     ]
 
-    combined_df.to_csv("processed_feedback.csv")
-    print("[load_feedback_data] Saved processed_feedback.csv")
+    os.makedirs("outputs", exist_ok=True)
+    combined_df.to_csv("outputs/processed_feedback.csv", index=False)
+    print("[load_feedback_data] Saved outputs/processed_feedback.csv")
 
     return combined_df
 
@@ -201,6 +201,30 @@ def embedding_feedback(list_to_embed,threshold):
 
 
 def parse_json_response(response_text):
+    """
+    Parse a JSON response returned by the LLM.
+
+    LLM responses sometimes include extra formatting around the JSON, especially
+    Markdown code fences such as ```json ... ```. This helper first strips empty
+    input and removes any fenced-code wrapper so the remaining text can be parsed
+    as JSON.
+
+    The function then tries to parse the cleaned text directly with
+    `json.loads()`. If that fails, it attempts a fallback parse by extracting the
+    substring between the first opening brace and the last closing brace. This is
+    useful when the model adds a short explanation before or after the JSON
+    object.
+
+    Args:
+        response_text (str): Raw text returned by the model.
+
+    Returns:
+        dict | list: Parsed JSON content from the model response.
+
+    Raises:
+        json.JSONDecodeError: If neither the full cleaned response nor the
+        extracted JSON-looking substring can be parsed.
+    """
     text = (response_text or "").strip()
     print(f"[parse_json_response] Parsing model response: chars={len(text)}")
     if text.startswith("```"):
@@ -379,4 +403,3 @@ def merge_tickets(ticket_list):
         merged_tickets = {"similar_tickets": []}
 
     return merged_tickets
-

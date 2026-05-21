@@ -1,0 +1,24 @@
+list of ids,ticket info,recommended_owner,recommended owner
+"['F021', 'F036', 'F001', 'F002', 'F007', 'F022', 'F004']",Login and Authentication Failures,authentication,
+"['F017', 'F034', 'F039', 'F011', 'F030', 'F049']",Service Centre Location and Search Issues,backend,
+"['F024', 'F046']",Application Stability and Crashes,frontend,
+"['F033', 'F041']",Chatbot Functionality Issues,product,
+"['F044', 'F047']",UX Improvement Requests,product,
+"['F027', 'F045']",Service Request Management Improvements,customer_support,
+"['F008', 'F023', 'F042', 'F031']","Document upload failure and status sync issues : Users are consistently unable to successfully complete the document upload workflow. Specifically, uploads fail at the final stage despite meeting requirements, or the system fails to update the status from 'pending' after a purported successful upload.",,backend
+"['F010', 'F032', 'F038']","Duplicate Subscription Charges : Users are experiencing double billing for the same subscription renewal period, resulting in multiple charges for a single service interval.",,payments
+"['F005', 'F025']","Booking confirmation sync failure in mobile app : Users are reporting that confirmed bookings, received via SMS or email, are failing to reflect in the 'Upcoming Appointments' section of the mobile application.",,backend
+"['F015', 'F029']","Reward voucher redemption failure : Users are experiencing issues with the rewards voucher system, specifically reporting that vouchers disappear after clicking redeem or receiving false 'already used' error messages during the redemption process.",,backend
+"['F014', 'F035']","Session timeout leads to data loss on form submission : Users are being logged out unexpectedly while in the middle of filling out forms, resulting in the complete loss of unsubmitted form data.",,authentication
+['F003'],App crash occurring specifically when accessing the user profile page.,,frontend
+['F006'],Chatbot providing irrelevant responses regarding refund status inquiries.,,customer_support
+['F009'],Notification settings fail to persist changes when disabling marketing alerts.,,notifications
+['F012'],Repeated failure in face verification process despite functional camera hardware.,,authentication
+['F013'],Profile update failure: User cannot update phone number due to UI element (save button) being disabled/greyed out.,,frontend
+['F016'],Dashboard service availability error: Users receive 'service unavailable' error message upon accessing the dashboard.,,backend
+['F018'],Appointment cancellation missing communication: User reports appointment cancellation in-app without provided explanation.,,customer_support
+['F019'],Email verification loop: System repeatedly prompts for email verification despite successful prior completion.,,authentication
+['F020'],Live chat state persistence: Chat queue resets when user switches away from the application.,,frontend
+['F026'],Inquiry regarding status update and processing time for a submitted refund request.,,customer_support
+['F028'],Failure in notification preferences settings: promotional messages persist despite being disabled.,,notifications
+['F050'],Request for automatic draft saving feature for long forms to prevent data loss or improve user experience.,,product

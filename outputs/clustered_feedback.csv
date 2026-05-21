@@ -1,51 +1,51 @@
 feedback_id,cust_id,source,feedback,ease_of_use_score,cluster_id
-F001,CUST001,customer_support_ticket,I cannot log in after the latest app update. The OTP screen keeps loading and never sends the code.,,8
-F002,CUST002,customer_support_ticket,Payment was deducted from my card but the app still says the transaction failed.,,2
-F003,CUST003,customer_support_ticket,The app crashes whenever I tap on my profile page.,,6
-F004,CUST004,customer_support_ticket,"I tried resetting my password, but the reset link expired immediately.",,3
-F005,CUST005,customer_support_ticket,My booking confirmation did not appear in the app even though I received an SMS.,,4
-F006,CUST006,customer_support_ticket,The chatbot keeps giving irrelevant answers when I ask about refund status.,,2
-F007,CUST007,customer_support_ticket,The app is very slow when loading my account history.,,8
-F008,CUST008,customer_support_ticket,"I uploaded a document, but the status still says pending upload.",,2
-F009,CUST009,customer_support_ticket,The notification settings do not save after I turn off marketing alerts.,,3
-F010,CUST010,customer_support_ticket,I was charged twice for the same subscription renewal.,,3
-F011,CUST011,customer_support_ticket,The map inside the app shows the wrong service centre location.,,5
-F012,CUST012,customer_support_ticket,Face verification failed repeatedly even though my camera works fine.,,3
-F013,CUST013,customer_support_ticket,I cannot update my phone number because the save button is greyed out.,,1
-F014,CUST014,customer_support_ticket,The app logged me out in the middle of submitting a form and I lost all my progress.,,7
-F015,CUST015,customer_support_ticket,My voucher disappeared from the rewards page after I clicked redeem.,,6
-F016,CUST016,customer_support_ticket,I get an error message saying service unavailable every time I open the dashboard.,,1
-F017,CUST017,customer_support_ticket,The search function does not return relevant results for nearby services.,,0
-F018,CUST018,customer_support_ticket,My appointment was cancelled in the app but I did not receive any explanation.,,1
-F019,CUST019,customer_support_ticket,The app keeps asking me to verify my email even though I already did it yesterday.,,1
-F020,CUST020,customer_support_ticket,The live chat queue resets when I switch away from the app.,,1
-F021,CUST101,email,"Dear support team, I am writing because I have been unable to access my account since yesterday evening. After entering my email and password, the app asks for an OTP but no code arrives. Please assist as I need to complete a booking today.",,1
-F022,CUST102,email,"Hi, I submitted a payment through the app this morning and the money was deducted from my bank account. However, my order status still shows unpaid. Could you check whether the transaction went through?",,8
-F023,CUST103,email,"Hello, I tried to upload my supporting documents three times, but each upload failed at the final step. The files are PDF and below the size limit shown in the app.",,2
-F024,CUST104,email,"Dear team, the app keeps crashing whenever I open the messages tab. I have already reinstalled the app and restarted my phone but the issue continues.",,1
-F025,CUST105,email,"Hi, I would like to report that my appointment details are missing from the mobile app. I received an email confirmation, but nothing appears under upcoming appointments.",,4
-F026,CUST106,email,"Hello, I requested a refund last week but the app still shows the case as new. Could someone update me on the expected processing time?",,5
-F027,CUST107,email,"Dear support, I accidentally selected the wrong service category and cannot edit my submitted request. Please advise whether I should cancel and submit a new one.",,5
-F028,CUST108,email,"Hi, the app interface is confusing when trying to change notification preferences. I turned off promotional messages, but I am still receiving them daily.",,1
-F029,CUST109,email,"Hello, I am unable to redeem the reward voucher in my account. The app says it has already been used, but I have not used it before.",,6
-F030,CUST110,email,"Dear team, the map directions in the app sent me to the wrong building. Please update the location pin for the service centre at the central branch.",,5
-F031,CUST111,email,"Hi, I completed identity verification but the app still shows my status as unverified. This prevents me from accessing several services.",,5
-F032,CUST112,email,"Hello, my subscription renewed twice this month and I see two separate charges. Please help reverse the duplicate payment.",,3
-F033,CUST113,email,"Dear support team, the chatbot does not understand my question about changing my booking date. It keeps redirecting me to unrelated FAQ pages.",,4
-F034,CUST114,email,"Hi, I tried using the search bar to find nearby service centres, but it shows results that are very far away from my postal code.",,0
-F035,CUST115,email,"Hello, I lost all information entered into a long form after the app timed out. It would be helpful if drafts were saved automatically.",,3
-F036,CUST201,survey,"The app is generally useful, but the login process takes too many steps and OTP delivery is inconsistent.",3,1
-F037,CUST202,survey,I like the clean layout and the booking flow was easy to understand.,5,4
-F038,CUST203,survey,Payment confirmation is unclear. I was not sure whether my transaction succeeded until much later.,2,3
-F039,CUST204,survey,The search results could be improved because I often cannot find the correct service on the first try.,3,0
-F040,CUST205,survey,The app loads quickly and I appreciate having all my requests in one place.,5,7
-F041,CUST206,survey,"The chatbot was not helpful for complex questions, but the human support follow-up was good.",3,3
-F042,CUST207,survey,I found the document upload process frustrating because error messages were too vague.,2,2
-F043,CUST208,survey,"Notifications are timely and useful, especially appointment reminders.",4,3
-F044,CUST209,survey,The rewards section is confusing and does not clearly explain redemption rules.,2,6
-F045,CUST210,survey,"I had no major issues, but the app could provide clearer progress tracking for submitted requests.",4,7
-F046,CUST211,survey,"The app crashed twice while I was editing my profile, which made the experience unreliable.",2,3
-F047,CUST212,survey,"The interface is simple enough for everyday use, but some labels are unclear.",4,3
+F001,CUST001,customer_support_ticket,I cannot log in after the latest app update. The OTP screen keeps loading and never sends the code.,,2
+F002,CUST002,customer_support_ticket,Payment was deducted from my card but the app still says the transaction failed.,,4
+F003,CUST003,customer_support_ticket,The app crashes whenever I tap on my profile page.,,0
+F004,CUST004,customer_support_ticket,"I tried resetting my password, but the reset link expired immediately.",,1
+F005,CUST005,customer_support_ticket,My booking confirmation did not appear in the app even though I received an SMS.,,3
+F006,CUST006,customer_support_ticket,The chatbot keeps giving irrelevant answers when I ask about refund status.,,8
+F007,CUST007,customer_support_ticket,The app is very slow when loading my account history.,,2
+F008,CUST008,customer_support_ticket,"I uploaded a document, but the status still says pending upload.",,8
+F009,CUST009,customer_support_ticket,The notification settings do not save after I turn off marketing alerts.,,1
+F010,CUST010,customer_support_ticket,I was charged twice for the same subscription renewal.,,7
+F011,CUST011,customer_support_ticket,The map inside the app shows the wrong service centre location.,,1
+F012,CUST012,customer_support_ticket,Face verification failed repeatedly even though my camera works fine.,,1
+F013,CUST013,customer_support_ticket,I cannot update my phone number because the save button is greyed out.,,2
+F014,CUST014,customer_support_ticket,The app logged me out in the middle of submitting a form and I lost all my progress.,,5
+F015,CUST015,customer_support_ticket,My voucher disappeared from the rewards page after I clicked redeem.,,0
+F016,CUST016,customer_support_ticket,I get an error message saying service unavailable every time I open the dashboard.,,6
+F017,CUST017,customer_support_ticket,The search function does not return relevant results for nearby services.,,6
+F018,CUST018,customer_support_ticket,My appointment was cancelled in the app but I did not receive any explanation.,,3
+F019,CUST019,customer_support_ticket,The app keeps asking me to verify my email even though I already did it yesterday.,,3
+F020,CUST020,customer_support_ticket,The live chat queue resets when I switch away from the app.,,3
+F021,CUST101,email,"Dear support team, I am writing because I have been unable to access my account since yesterday evening. After entering my email and password, the app asks for an OTP but no code arrives. Please assist as I need to complete a booking today.",,3
+F022,CUST102,email,"Hi, I submitted a payment through the app this morning and the money was deducted from my bank account. However, my order status still shows unpaid. Could you check whether the transaction went through?",,4
+F023,CUST103,email,"Hello, I tried to upload my supporting documents three times, but each upload failed at the final step. The files are PDF and below the size limit shown in the app.",,8
+F024,CUST104,email,"Dear team, the app keeps crashing whenever I open the messages tab. I have already reinstalled the app and restarted my phone but the issue continues.",,3
+F025,CUST105,email,"Hi, I would like to report that my appointment details are missing from the mobile app. I received an email confirmation, but nothing appears under upcoming appointments.",,3
+F026,CUST106,email,"Hello, I requested a refund last week but the app still shows the case as new. Could someone update me on the expected processing time?",,2
+F027,CUST107,email,"Dear support, I accidentally selected the wrong service category and cannot edit my submitted request. Please advise whether I should cancel and submit a new one.",,1
+F028,CUST108,email,"Hi, the app interface is confusing when trying to change notification preferences. I turned off promotional messages, but I am still receiving them daily.",,3
+F029,CUST109,email,"Hello, I am unable to redeem the reward voucher in my account. The app says it has already been used, but I have not used it before.",,0
+F030,CUST110,email,"Dear team, the map directions in the app sent me to the wrong building. Please update the location pin for the service centre at the central branch.",,1
+F031,CUST111,email,"Hi, I completed identity verification but the app still shows my status as unverified. This prevents me from accessing several services.",,8
+F032,CUST112,email,"Hello, my subscription renewed twice this month and I see two separate charges. Please help reverse the duplicate payment.",,7
+F033,CUST113,email,"Dear support team, the chatbot does not understand my question about changing my booking date. It keeps redirecting me to unrelated FAQ pages.",,1
+F034,CUST114,email,"Hi, I tried using the search bar to find nearby service centres, but it shows results that are very far away from my postal code.",,6
+F035,CUST115,email,"Hello, I lost all information entered into a long form after the app timed out. It would be helpful if drafts were saved automatically.",,5
+F036,CUST201,survey,"The app is generally useful, but the login process takes too many steps and OTP delivery is inconsistent.",3,2
+F037,CUST202,survey,I like the clean layout and the booking flow was easy to understand.,5,1
+F038,CUST203,survey,Payment confirmation is unclear. I was not sure whether my transaction succeeded until much later.,2,4
+F039,CUST204,survey,The search results could be improved because I often cannot find the correct service on the first try.,3,6
+F040,CUST205,survey,The app loads quickly and I appreciate having all my requests in one place.,5,3
+F041,CUST206,survey,"The chatbot was not helpful for complex questions, but the human support follow-up was good.",3,5
+F042,CUST207,survey,I found the document upload process frustrating because error messages were too vague.,2,8
+F043,CUST208,survey,"Notifications are timely and useful, especially appointment reminders.",4,1
+F044,CUST209,survey,The rewards section is confusing and does not clearly explain redemption rules.,2,0
+F045,CUST210,survey,"I had no major issues, but the app could provide clearer progress tracking for submitted requests.",4,1
+F046,CUST211,survey,"The app crashed twice while I was editing my profile, which made the experience unreliable.",2,7
+F047,CUST212,survey,"The interface is simple enough for everyday use, but some labels are unclear.",4,4
 F048,CUST213,survey,I prefer the app over calling support because it saves time.,5,1
-F049,CUST214,survey,The location feature sometimes recommends service centres that are not actually nearby.,3,5
-F050,CUST215,survey,"The overall experience is acceptable, but I would like automatic draft saving for long forms.",3,4
+F049,CUST214,survey,The location feature sometimes recommends service centres that are not actually nearby.,3,6
+F050,CUST215,survey,"The overall experience is acceptable, but I would like automatic draft saving for long forms.",3,5

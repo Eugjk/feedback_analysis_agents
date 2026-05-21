@@ -39,16 +39,12 @@ def load_feedback_data(
             - feedback
             - ease_of_use_score
     """
-    print(f"[load_feedback_data] Loading workbook: {excel_path}")
+    
 
     support_df = pd.read_excel(excel_path, sheet_name=0)
     email_df = pd.read_excel(excel_path, sheet_name=1)
     survey_df = pd.read_excel(excel_path, sheet_name=2)
-    print(
-        "[load_feedback_data] Sheets loaded: "
-        f"support={len(support_df)}, email={len(email_df)}, "
-        f"survey={len(survey_df)}"
-    )
+    
 
     support_df["source"] = "customer_support_ticket"
     email_df["source"] = "email"
@@ -57,17 +53,16 @@ def load_feedback_data(
 
     support_df["ease_of_use_score"] = None
     email_df["ease_of_use_score"] = None
-    print("[load_feedback_data] Added missing ease_of_use_score columns")
+    
 
     combined_df = pd.concat(
         [support_df, email_df, survey_df],
         ignore_index=True
     )
-    print(f"[load_feedback_data] Combined rows before cleanup: {len(combined_df)}")
+    
 
     combined_df = combined_df.dropna(subset=["cust_id", "feedback"])
-    print(f"[load_feedback_data] Rows after dropping incomplete feedback: {len(combined_df)}")
-
+    
     combined_df["feedback_id"] = [
         f"F{i + 1:03d}" for i in range(len(combined_df))
     ]
@@ -226,7 +221,7 @@ def parse_json_response(response_text):
         extracted JSON-looking substring can be parsed.
     """
     text = (response_text or "").strip()
-    print(f"[parse_json_response] Parsing model response: chars={len(text)}")
+
     if text.startswith("```"):
         print("[parse_json_response] Detected fenced response; removing code fences")
         text = "\n".join(
@@ -302,10 +297,7 @@ def summarise_cluster_with_gemini(cluster_df):
     feedback_records = cluster_df[
         ["feedback_id", "cust_id", "source", "feedback", "ease_of_use_score"]
     ].to_dict(orient="records")
-    print(
-        "[summarise_cluster_with_gemini] Converted cluster rows to records: "
-        f"records={len(feedback_records)}"
-    )
+    
 
     feedback_json = json.dumps(feedback_records, indent=2)
     #print(feedback_json)
@@ -321,10 +313,7 @@ def summarise_cluster_with_gemini(cluster_df):
         contents=new_prompt
     )
     response_text = response.text or ""
-    print(
-        "[summarise_cluster_with_gemini] Gemini summary response received: "
-        f"chars={len(response_text)}"
-    )
+    
 
     try:
         summary = parse_json_response(response_text)

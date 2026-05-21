@@ -146,7 +146,7 @@ def run_feedback_workflow():
         all_merged_tickets.extend(merged_tickets["similar_tickets"])
         
     
-    final_df=pd.DataFrame(columns=["list of ids","ticket info","recommended_owner"])
+    final_df=pd.DataFrame(columns=["list of ids","ticket info","recommended owner"])
     merged_indexes=[]
     for ticket in all_merged_tickets:
         ticket_name, ticket_ids=ticket["merged_ticket_name"],ticket["ticket_ids"]
@@ -158,7 +158,7 @@ def run_feedback_workflow():
         final_df.loc[len(final_df)]={
             "list of ids": all_custids,
             "ticket info": ticket_name,
-            "recommended_owner": recommended_owner
+            "recommended owner": recommended_owner
         }
     non_merged_df=df.loc[
     ~df["ticket_id"].isin(merged_indexes),
